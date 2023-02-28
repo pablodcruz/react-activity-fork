@@ -1,7 +1,13 @@
 import React from 'react'
 import { Pokemon } from '../../models/Pokemon'
 
-export default function PokemonBox(props:Pokemon) {
+interface Props extends Pokemon{
+   onDelete?:()=>void;
+}
+
+export default function PokemonBox(props:Props) {
+
+
   return (
          <div>
             <img src={props.img}/>
@@ -9,6 +15,7 @@ export default function PokemonBox(props:Pokemon) {
             <p>Level: {props.level}</p>
             <p>Health: {props.health}</p>
             <p>Damage: {props.damage}</p>
+            {props.onDelete&&<button onClick={props.onDelete}>Delete Me</button>}
          </div>
          )
 }
