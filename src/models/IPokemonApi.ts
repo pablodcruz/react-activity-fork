@@ -1,4 +1,4 @@
-export interface PokemonAPI {
+export interface IPokemonApi {
     id:number,
     name:string,
     level?:number,
